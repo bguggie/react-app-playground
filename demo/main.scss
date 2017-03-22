@@ -1,0 +1,11 @@
+/* Install chopstrap theme	*/
+$icon-font-path: "~chopstrap-sass/src/fonts/";
+@import "~chopstrap-sass/src/chopstrap";
+
+.demo-header {
+    text-align: center;
+}
+
+.package-name {
+    font-size: 4rem;
+}
