@@ -3,7 +3,7 @@ import React from 'react';
 import Aside from '../components/Aside.jsx';
 import Content from '../components/Content.jsx';
 
-class SRP extends React.Component {
+class SERPBase extends React.Component {
 
     render() {
         console.log('RENDERING: ', this.constructor.displayName);
@@ -18,8 +18,8 @@ class SRP extends React.Component {
     }
 }
 
-SRP.propTypes = {
+SERPBase.propTypes = {
 
 };
 
-export default SRP;
+export default SERPBase;

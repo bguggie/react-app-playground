@@ -2,7 +2,7 @@ import React from 'react';
 
 import {browserHistory} from 'react-router';
 
-class SIP extends React.Component {
+class InterstitialBase extends React.Component {
 
     // componentDidMount() {
     //     window.setTimout(() => browserHistory.push('/SRP'), 50);
@@ -15,8 +15,8 @@ class SIP extends React.Component {
 
 }
 
-SIP.propTypes = {
+InterstitialBase.propTypes = {
 
 };
 
-export default SIP;
+export default InterstitialBase;

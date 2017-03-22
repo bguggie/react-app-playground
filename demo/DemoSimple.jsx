@@ -2,11 +2,11 @@ import React from 'react';
 
 import {browserHistory, Route, Router} from 'react-router';
 
-import HPApp from '../src/pages/HPPage.jsx';
-import SFPApp from '../src/pages/SFPPage.jsx';
-import SIPApp from '../src/pages/SIPPage.jsx';
-import SRPApp from '../src/pages/SRPPage.jsx';
-import VDPApp from '../src/pages/VDPPage.jsx';
+import HPApp from '../src/pages/IndexFullPage.jsx';
+import SFPApp from '../src/pages/SearchFormFullPage.jsx';
+import SIPApp from '../src/pages/InterstitialFullPage.jsx';
+import SRPApp from '../src/pages/SERPFullPage.jsx';
+import VDPApp from '../src/pages/ItemFullPage.jsx';
 
 
 class DemoSimple extends React.Component {
@@ -25,10 +25,10 @@ class DemoSimple extends React.Component {
                 }}
             >
                 <Route path="/" component={HPApp} />
-                <Route path="/SIP" component={SIPApp} />
-                <Route path="/SFP" component={SFPApp} />
-                <Route path="/SRP" component={SRPApp} />
-                <Route path="/VDP" component={VDPApp} />
+                <Route path="/Interstitial" component={SIPApp} />
+                <Route path="/SearchForm" component={SFPApp} />
+                <Route path="/SERP" component={SRPApp} />
+                <Route path="/Item" component={VDPApp} />
             </Router>
         );
     }

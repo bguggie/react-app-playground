@@ -4,7 +4,7 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import Navigation from '../components/Navigation.jsx';
 
-class ATCPage extends React.Component {
+class FullPageWrapper extends React.Component {
 
     render() {
         console.log('RENDERING: ', this.constructor.displayName);
@@ -22,8 +22,8 @@ class ATCPage extends React.Component {
 
 }
 
-ATCPage.propTypes = {
+FullPageWrapper.propTypes = {
     children: React.PropTypes.node,
 };
 
-export default ATCPage;
+export default FullPageWrapper;

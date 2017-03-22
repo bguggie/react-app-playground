@@ -1,6 +1,6 @@
 import React from 'react';
 
-class HP extends React.Component {
+class IndexBase extends React.Component {
 
     render() {
         console.log('RENDERING: ', this.constructor.displayName);
@@ -14,8 +14,8 @@ class HP extends React.Component {
 
 }
 
-HP.propTypes = {
+IndexBase.propTypes = {
 
 };
 
-export default HP;
+export default IndexBase;

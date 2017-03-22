@@ -19,19 +19,19 @@ class Navigation extends React.Component {
                 onSelect={this.handleSelect}
             >
                 <IndexLinkContainer to={{pathname: '/'}}>
-                    <NavItem className="text-white" eventKey="1">HP</NavItem>
+                    <NavItem className="text-white" eventKey="1">Home Page</NavItem>
                 </IndexLinkContainer>
-                <LinkContainer to={{pathname: '/SIP'}}>
-                    <NavItem eventKey="2">SIP</NavItem>
+                <LinkContainer to={{pathname: '/Interstitial'}}>
+                    <NavItem eventKey="2">Interstitial</NavItem>
                 </LinkContainer>
-                <LinkContainer to={{pathname: '/SFP'}}>
-                    <NavItem eventKey="3" >SFP</NavItem>
+                <LinkContainer to={{pathname: '/Search Form'}}>
+                    <NavItem eventKey="3" >Search Form</NavItem>
                 </LinkContainer>
-                <LinkContainer to={{pathname: '/SRP'}}>
-                    <NavItem eventKey="3" >SRP</NavItem>
+                <LinkContainer to={{pathname: '/SERP'}}>
+                    <NavItem eventKey="3" >SERP</NavItem>
                 </LinkContainer>
-                <LinkContainer to={{pathname: '/VDP'}}>
-                    <NavItem eventKey="3" >VDP</NavItem>
+                <LinkContainer to={{pathname: '/Item'}}>
+                    <NavItem eventKey="3" >Item</NavItem>
                 </LinkContainer>
             </Nav>
         );

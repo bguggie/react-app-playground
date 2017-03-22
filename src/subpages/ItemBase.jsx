@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SFP extends React.Component {
+class ItemBase extends React.Component {
 
     render() {
         console.log('RENDERING: ', this.constructor.displayName);
@@ -9,8 +9,6 @@ class SFP extends React.Component {
 
 }
 
-SFP.propTypes = {
+ItemBase.propTypes = {};
 
-};
-
-export default SFP;
+export default ItemBase;

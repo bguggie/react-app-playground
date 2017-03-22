@@ -1,6 +1,6 @@
 import React from 'react';
 
-class VDP extends React.Component {
+class SearchFormBase extends React.Component {
 
     render() {
         console.log('RENDERING: ', this.constructor.displayName);
@@ -9,6 +9,8 @@ class VDP extends React.Component {
 
 }
 
-VDP.propTypes = {};
+SearchFormBase.propTypes = {
 
-export default VDP;
+};
+
+export default SearchFormBase;
