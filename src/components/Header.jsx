@@ -51,4 +51,5 @@ Header.propTypes = {
     className: React.PropTypes.string,
 };
 
-export default ReactRenderVisualizer(Header);
+// export default ReactRenderVisualizer(Header);
+export default Header;

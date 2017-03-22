@@ -36,4 +36,5 @@ Content.propTypes = {
     className: React.PropTypes.string,
 };
 
-export default ReactRenderVisualizer(Content);
+export default Content;
+// export default ReactRenderVisualizer(Content);

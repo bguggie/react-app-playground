@@ -29,12 +29,12 @@ const config = {
 
 const CSS_PATHS = [
   config.paths.demo,
-  path.join(ROOT_PATH, 'style.css'),
+  // path.join(ROOT_PATH, 'style.css'),
 ];
 
 const STYLE_ENTRIES = [
   './demo/main.scss',
-  './style.css'
+  // './style.css'
 ];
 
 process.env.BABEL_ENV = TARGET;
@@ -42,43 +42,46 @@ process.env.BABEL_ENV = TARGET;
 // Common webpack settings for development and demo 
 const devCommon = {
   resolve: {
-    root: path.resolve(ROOT_PATH),
-    extensions: ['', '.js', '.jsx', '.css', '.png', '.jpg'],
-    fallback: [path.join(__dirname, 'node_modules')]
-  },
-  resolveLoader: {
-    fallback: [path.join(__dirname, 'node_modules')]
-  },
-  module: {
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['eslint'],
-        include: [
-          config.paths.demo,
-          config.paths.src
-        ]
-      }
+    modules: [
+        path.resolve(ROOT_PATH),
+        'node_modules'
     ],
-    loaders: [
-      {
-        test: /\.png$/,
-        loader: 'url?limit=100000&mimetype=image/png',
-        include: config.paths.demo
-      },
-      {
-        test: /\.jpg$/,
-        loader: 'file',
-        include: config.paths.demo
-      },
+    extensions: ['.js', '.jsx', '.css', '.png', '.jpg']
+  },
+  // resolveLoader: {
+  //   fallback: [path.join(__dirname, 'node_modules')]
+  // },
+  module: {
+    // rules: [
+    //   {
+    //     test: /\.jsx?$/,
+    //     enforce: "pre",
+    //     loaders: ['eslint'],
+    //     include: [
+    //       config.paths.demo,
+    //       config.paths.src
+    //     ]
+    //   }
+    // ],
+    rules: [
+      // {
+      //   test: /\.png$/,
+      //   loader: 'url?limit=100000&mimetype=image/png',
+      //   include: config.paths.demo
+      // },
+      // {
+      //   test: /\.jpg$/,
+      //   loader: 'file',
+      //   include: config.paths.demo
+      // },
       {
         test: /\.json$/,
-        loader: 'json',
+        loader: 'json-loader',
         include: path.join(ROOT_PATH, 'package.json')
       },
       { 
-        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader : 'file-loader'
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader'
       }
     ]
   },
@@ -109,15 +112,20 @@ if (TARGET === 'start') {
       new webpack.HotModuleReplacementPlugin()
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(scss|css)$/,
-          loaders: ['style', 'css', 'sass'],
+          use: [
+              { loader: 'style-loader' },
+              { loader: 'css-loader' },
+              { loader: 'sass-loader' }
+          ],
           include: CSS_PATHS
         },
         {
           test: /\.jsx?$/,
-          loaders: ['babel?cacheDirectory'],
+          loader: 'babel-loader',
+          options: 'cacheDirectory',
           include: [
             config.paths.demo,
             config.paths.src
@@ -129,7 +137,7 @@ if (TARGET === 'start') {
       historyApiFallback: true,
       hot: true,
       inline: true,
-      progress: true,
+      // progress: true,
       host: process.env.HOST || process.env.HOSTNAME + '.autotrader.com',
       port: process.env.PORT,
       stats: 'errors-only'
@@ -270,11 +278,15 @@ const distCommon = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        loaders: ['babel'],
-        include: config.paths.src
+        use: [
+          {
+            test: /\.jsx?$/,
+            loader: 'babel-loader',
+            include: config.paths.src
+          }
+        ]
       }
     ]
   },

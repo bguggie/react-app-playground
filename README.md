@@ -1,5 +1,6 @@
 # react-app-playground
 Basic React App for experimenting with evolving frameworks
+... WIP ... currently incomplete and not building
 
 ## Frameworks used:
 
@@ -20,4 +21,10 @@ Basic React App for experimenting with evolving frameworks
 - react-router4
 - react16.0
 - updated normalizer
-- 
+- universal
+ 
+## TODO
+- pull out babel et al into a common babel package
+- add eslint
+- add testing
+- add demo
