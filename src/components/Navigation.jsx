@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 // import IndexLinkContainer from 'react-router-bootstrap/lib/IndexLinkContainer';
 // import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
 
@@ -18,21 +20,21 @@ class Navigation extends React.Component {
                 activeKey="1"
                 onSelect={this.handleSelect}
             >
-                <IndexLinkContainer to={{pathname: '/'}}>
-                    <NavItem className="text-white" eventKey="1">Home Page</NavItem>
-                </IndexLinkContainer>
-                <LinkContainer to={{pathname: '/Interstitial'}}>
-                    <NavItem eventKey="2">Interstitial</NavItem>
-                </LinkContainer>
-                <LinkContainer to={{pathname: '/Search Form'}}>
-                    <NavItem eventKey="3" >Search Form</NavItem>
-                </LinkContainer>
-                <LinkContainer to={{pathname: '/SERP'}}>
-                    <NavItem eventKey="3" >SERP</NavItem>
-                </LinkContainer>
-                <LinkContainer to={{pathname: '/Item'}}>
-                    <NavItem eventKey="3" >Item</NavItem>
-                </LinkContainer>
+                <NavLink to='/'>
+                    Home Page
+                </NavLink>
+                <NavLink to='/Interstitial'>
+                    Interstitial
+                </NavLink>
+                <NavLink to='/Search Form'>
+                    Search Form
+                </NavLink>
+                <NavLink to='/SERP'>
+                    SERP
+                </NavLink>
+                <NavLink to='/Item'>
+                    Item
+                </NavLink>
             </Nav>
         );
     }

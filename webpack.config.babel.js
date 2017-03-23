@@ -39,7 +39,7 @@ const STYLE_ENTRIES = [
 
 process.env.BABEL_ENV = TARGET;
 
-// Common webpack settings for development and demo 
+// Common webpack settings for development and demo
 const devCommon = {
   resolve: {
     modules: [
@@ -79,7 +79,7 @@ const devCommon = {
         loader: 'json-loader',
         include: path.join(ROOT_PATH, 'package.json')
       },
-      { 
+      {
         test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         loader: 'file-loader'
       }
@@ -138,8 +138,8 @@ if (TARGET === 'start') {
       hot: true,
       inline: true,
       // progress: true,
-      host: process.env.HOST || process.env.HOSTNAME + '.autotrader.com',
-      port: process.env.PORT,
+      host: process.env.HOST || 'localhost',
+      port: process.env.PORT || '8080',
       stats: 'errors-only'
     }
   });

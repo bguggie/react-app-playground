@@ -4,15 +4,16 @@ import {
     // browserHistory,
     // IndexRoute,
     Route,
-    StaticRouter as Router,
+    BrowserRouter as Router,
 } from 'react-router-dom';
 
-import ATCApp from '../src/pages/FullPageWrapper.jsx';
-// import HP from '../src/subpages/IndexBase.jsx';
-import SFP from '../src/subpages/SearchFormBase.jsx';
-import SIP from '../src/subpages/InterstitialBase.jsx';
-import SRP from '../src/subpages/SERPBase.jsx';
-import VDP from '../src/subpages/ItemBase.jsx';
+import FullPageWrapper from '../src/pages/FullPageWrapper.jsx';
+
+import IndexBase from '../src/subpages/IndexBase.jsx';
+import SearchFormBase from '../src/subpages/SearchFormBase.jsx';
+import InterstitialBase from '../src/subpages/InterstitialBase.jsx';
+import SERPBase from '../src/subpages/SERPBase.jsx';
+import ItemBase from '../src/subpages/ItemBase.jsx';
 
 
 class DemoNested extends React.Component {
@@ -25,11 +26,12 @@ class DemoNested extends React.Component {
         return (
             <Router
             >
-                <Route path="/" component={ATCApp}>
-                    <Route path="/SIP" component={SIP} />
-                    <Route path="/SFP" component={SFP} />
-                    <Route path="/SRP" component={SRP} />
-                    <Route path="/VDP" component={VDP} />
+                <Route path="/" component={FullPageWrapper}>
+                    <Route path="/" component={IndexBase} />
+                    <Route path="/Interstitial" component={InterstitialBase} />
+                    <Route path="/SearchForm" component={SearchFormBase} />
+                    <Route path="/SERP" component={SERPBase} />
+                    <Route path="/Item" component={ItemBase} />
                 </Route>
             </Router>
         );
